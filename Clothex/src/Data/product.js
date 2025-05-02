@@ -1,0 +1,61 @@
+export const products = [{
+  id: "1aghfd23djfhehkashc",
+  name: "HF FLOWER SPANDEX WHITE TEE",
+  image: "src/assets/Clothes/hf/HF FLOWER SPANDEX WHITE TEE.jpg",
+  price: 240000,
+  quantity: 1,
+}, {
+  id: "2hdhhge35ggxgggxgdyege42",
+  name: "HF Football Jersey- Green",
+  image: "src/assets/Clothes/hf/HF Football Jersey- Green.jpg",
+  price: 320000,
+  quantity: 1,
+}, {
+  id: "3hdhete5egtetry474746262x",
+  name: "HF Football Jersey- Red",
+  image: "src/assets/Clothes/hf/HF Football Jersey- Red.jpeg",
+  price: 320000,
+  quantity: 1,
+}, {
+  id: "4gfggsyryy46gdcget3253ggcgg",
+  name: "HF HUNTER BEANIE BLACK",
+  image: "src/assets/Clothes/hf/HF HUNTER BEANIE BLACK.jpg",
+  price: 80000,
+  quantity: 1,
+}, {
+  id: "5vgdggdggey64tegfcvvddvGGDGFEG",
+  name: "HF HUNTER BEANIE ORANGE",
+  image: "src/assets/Clothes/hf/HF HUNTER BEANIE ORANGE.jpg",
+  price: 80000,
+  quantity: 1,
+}, {
+  id: "6dgdggdhgt554tedjhmvnhhfhfhhf",
+  name: "HF HUNTER BEANIE RED",
+  image: "src/assets/Clothes/hf/HF HUNTER BEANIE RED.jpg",
+  price: 80000,
+  quantity: 1,
+}, {
+  id: "7dgggttteyrteffsffsgjgggsg",
+  name: "HF LASGIDI FEMALE JERSEY – ORANGE",
+  image: "src/assets/Clothes/hf/HF LASGIDI FEMALE JERSEY – ORANGE.jpg",
+  price: 160000,
+  quantity: 1,
+}, {
+  id: "8dfsffsyettet53kDGGGJgkaf62454vx",
+  name: "HF LASGIDI FEMALE JERSEY – RED",
+  image: "src/assets/Clothes/hf/HF LASGIDI FEMALE JERSEY – RED.jpg",
+  price: 160000,
+  quantity: 1,
+}, {
+  id: "9dhdhgdggshste265tdgdgx",
+  name: "HF LASGIDI JERSEY – RED",
+  image: "src/assets/Clothes/hf/HF LASGIDI JERSEY – RED.jpg",
+  price: 320000,
+  quantity: 1,
+}, {
+  id: "10hf",
+  name: "HF LASGIDI SHORTS – ORANGE",
+  image: "src/assets/Clothes/hf/HF LASGIDI SHORTS – ORANGE.jpg",
+  price: 240000,
+  quantity: 1,
+}];

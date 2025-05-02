@@ -1,0 +1,12 @@
+.cart {
+  transition: all 0.3s ease-in-out;
+}
+
+.cart::-webkit-scrollbar {
+  display: none;
+}
+
+.cart-info .quantity button{
+  width: 25px;
+  border: 1px solid #000;
+}

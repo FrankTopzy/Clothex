@@ -1,0 +1,15 @@
+.favorite {
+  min-height: 83vh;
+}
+
+.no-fav {
+  background: rgba(0, 0, 0, 0.4);
+  margin: 150px auto;
+  padding-top: 30px;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
