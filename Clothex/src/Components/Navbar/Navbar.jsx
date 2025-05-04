@@ -56,7 +56,7 @@ function Navbar() {
         <Link>LOGIN</Link>
         <Link to={"/favorite"}>FAVORITES</Link>
         
-        <div><img src={cartIcon} alt="" width="40px" onClick={() => {cartRef.current.style.right = '0'} } className="cart-icon"/></div>
+        <div><img src={cartIcon} alt="" width="40px" onClick={() => {cartRef.current.style.right = '0'} } className="cart-icon cursor-pointer"/></div>
       </div>
     </div>
   )

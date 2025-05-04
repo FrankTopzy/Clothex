@@ -19,7 +19,7 @@ function Shop() {
 
   return (
     <div className='shop min-h-screen bg-white text-black text-center'>
-      {<Cart/>}
+      <Cart/>
       <Card/>
 
       <button className='py-2 px-6 text-white bg-black mt-8' onClick={loadMore}>Load More</button>

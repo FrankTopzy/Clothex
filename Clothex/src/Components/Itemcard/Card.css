@@ -34,3 +34,12 @@
 .fav-icon.active {
   background: red;
 }
+
+.favorite-btn {
+  color: white;
+  font-size: 25px;
+}
+
+.favorite-btn.active {
+  color: red  ;
+}

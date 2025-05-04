@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './Cart.css'
 import { ClothContext } from '../Context/Context';
-import { baseCurrency, closeCart } from '../../Services/formatCurrency';
+import { baseCurrency } from '../../Services/formatCurrency';
 import closeIcon from '../../assets/icons/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
 import deleteIcon from '../../assets/icons/delete_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
 

@@ -1,5 +1,6 @@
 .favorite {
-  min-height: 83vh;
+  min-height: 98vh;
+  padding: 150px 3% 40px;
 }
 
 .no-fav {
@@ -12,4 +13,12 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  background: #000;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

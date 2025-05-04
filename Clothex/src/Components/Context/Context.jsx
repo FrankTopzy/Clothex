@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, use, useEffect, useState } from 'react'
 
 export const ClothContext = createContext();
 
@@ -13,6 +13,7 @@ const ClothContextProvider = (props) => {
   const [favorite, setFavorite] = useState([]);
   const [count, setCount] = React.useState(1)
 
+  //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
     const storedCart = localStorage.getItem("cart")
 
@@ -40,6 +41,31 @@ const ClothContextProvider = (props) => {
     setCount(1)
   }
 
+  //---------------------------------------------------------------------------------HANDLES FAVORITE OPERATIONS -----------------------------------------------------------------------------------------------------------
+
+  useEffect(() => {
+    const storedFavorite = localStorage.getItem("favorite")
+
+    if (storedFavorite) setFavorite(JSON.parse(storedFavorite))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("favorite", JSON.stringify(favorite))
+  }, [favorite])
+
+  const addToFavorite = (cloth) => {
+    setFavorite(prev => [...prev, cloth])
+  }
+
+  const removeFromFavorite = (clothId) => {
+    setFavorite(prev => prev.filter(cloth => cloth.id !== clothId))
+  }
+
+  const isFavorite = (clothId) => {
+    return favorite.some(cloth => cloth.id == clothId)
+  }
+
+  //--------------------------------------------------------------------------------- PROP VALUES -----------------------------------------------------------------------------------------------------------
   const value = {
     cartRef,
     currency,
@@ -52,6 +78,10 @@ const ClothContextProvider = (props) => {
     setCount,
     clothes,
     setClothes,
+    favorite,
+    addToFavorite,
+    removeFromFavorite,
+    isFavorite,
   }
 
   return (

@@ -7,7 +7,7 @@ import favIcon from '../../assets/heart-line.svg'
 import addToCartBtn from '../../assets/icons/shopping_bag_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png';
 
 function Card() {
-  const {currency, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes} = React.useContext(ClothContext);
+  const {currency, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite} = React.useContext(ClothContext);
   const [loading, setLoading] = React.useState(true);
   const addBtn = React.useRef(null);
 
@@ -30,6 +30,17 @@ function Card() {
   
 
   const itemList = clothes.map((cloth, index) => {
+
+    const favorite = isFavorite(cloth.id)
+
+    function handleFaveBtn() {
+      if (favorite) removeFromFavorite(cloth.id)
+      else addToFavorite(cloth)
+
+      console.log("clicked");
+      
+    }
+
     let clothPrice = cloth.price;
     //console.log(cloth.id)
 
@@ -46,7 +57,7 @@ function Card() {
 
         <div className='img relative'>
           <img src={cloth.image} alt={cloth.name} className='cloth-img'/>
-          <img src={favIcon} alt="" width={"30px"} className={`fav-icon`}/>
+          <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={handleFaveBtn}>♥</button>
         </div>
 
         <div className='display flex justify-between items-center'>
@@ -55,7 +66,9 @@ function Card() {
             <p className='cloth-price'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
           </div>
 
-          <button className='bg-black p-2 rounded-full flex justify-center' onClick={() => {addToCartClick(cloth); cartRef.current.style.right = '0'}} ref={addBtn}><img src={addToCartBtn} alt="" /></button>
+          <button className='bg-black p-2 rounded-full flex justify-center' onClick={() => {addToCartClick(cloth); cartRef.current.style.right = '0'}} ref={addBtn}>
+            <img src={addToCartBtn} alt="" />
+          </button>
         </div>
       </div>
     )
