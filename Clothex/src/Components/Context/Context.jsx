@@ -11,7 +11,6 @@ const ClothContextProvider = (props) => {
   });
   const [cart, setCart] = useState([]);
   const [favorite, setFavorite] = useState([]);
-  const [count, setCount] = React.useState(1)
 
   //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -25,20 +24,17 @@ const ClothContextProvider = (props) => {
   }, [cart])
 
   const addToCart = (cloth) => {
-    cart.forEach((item) => {
-      if (item.id === cloth.id) {
-        window.alert("item already in cart")
-      }
-    })
+    const matchingItem = cart.find((cartItem) => cartItem.id === cloth.id)
 
-    if(!cart.includes(cloth)) {
-      setCart(prev => [...prev, cloth])
+    if (matchingItem) {
+      setCart(cart.map((cartItem) => cartItem.id === cloth.id ? { ...cartItem, count: cartItem.count + 1 } : cartItem)); //if condition met, increment else return original cartitem
+    } else {
+      setCart(prev => [...prev, {...cloth, count: 1}])
     }
   }
 
   const removeFromCart = (clothId) => {
     setCart(prev => prev.filter(cloth => cloth.id !== clothId))
-    setCount(1)
   }
 
   //---------------------------------------------------------------------------------HANDLES FAVORITE OPERATIONS -----------------------------------------------------------------------------------------------------------
@@ -74,8 +70,6 @@ const ClothContextProvider = (props) => {
     setCart,
     addToCart,
     removeFromCart,
-    count,
-    setCount,
     clothes,
     setClothes,
     favorite,

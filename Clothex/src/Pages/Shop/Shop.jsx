@@ -12,6 +12,9 @@ function Shop() {
     setClothes(products.slice(0, clothes.length + 5));
   }
 
+  //const filteredProduct = products.filter(product => product.category === "highFashion").slice(0, 19);
+
+
 
   useEffect(() => {
     setClothes(products.slice(0, 5));

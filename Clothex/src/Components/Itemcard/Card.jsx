@@ -19,7 +19,6 @@ function Card() {
 
   const addToCartClick = (cloth) => {
     addToCart(cloth)
-    setCount(1)
     /*if (!cartProduct) {
       addToCart(cloth);
     } else {
