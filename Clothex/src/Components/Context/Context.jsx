@@ -9,8 +9,8 @@ const ClothContextProvider = (props) => {
     name: 'ngn',
     symbol: '₦'
   });
-  const [cart, setCart] = useState([]);
-  const [favorite, setFavorite] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+  const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem("favorite")) || []);
 
   //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -60,6 +60,21 @@ const ClothContextProvider = (props) => {
   const isFavorite = (clothId) => {
     return favorite.some(cloth => cloth.id == clothId)
   }
+//--------------------------------------------------------------------------------- Quantity increment -----------------------------------------------------------------------------------------------------------
+  const handleCountChange = (id, action) => {// When updating state in React, it's a good practice to use the set function provided by useState to ensure that state updates are handled correctly and consistently.
+        setCart(prevCart =>
+            prevCart.map(item => {
+                if (item.id === id) {
+                    if (action === 'increment') {
+                        return { ...item, count: item.count + 1 };
+                    } else if (action === 'decrement' && item.count > 1) {
+                        return { ...item, count: item.count - 1 };
+                    }
+                }
+                return item;
+            })
+        );
+    };
 
   //--------------------------------------------------------------------------------- PROP VALUES -----------------------------------------------------------------------------------------------------------
   const value = {
@@ -76,6 +91,7 @@ const ClothContextProvider = (props) => {
     addToFavorite,
     removeFromFavorite,
     isFavorite,
+    handleCountChange,
   }
 
   return (

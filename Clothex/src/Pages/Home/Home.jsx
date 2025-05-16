@@ -24,10 +24,9 @@ function Home() {
     //setLoading(true)
 
     setFilteredSearch(products.filter((cloth) => {
-      return cloth.name.toLowerCase().includes(search.toLowerCase())
+      if (search.trim() !== "") {return cloth.name.toLowerCase().includes(search.trim().toLowerCase())}
+      
     }))
-
-    console.log(filteredSearch)
   }, [search])
   
   
@@ -35,42 +34,43 @@ function Home() {
   return (
     
     <div className='home'>
-      {<Cart/>}
       {/*------------------------------------------------------------------------------------------------------ MAIN SECTION ------------------------------------------------------------------------------------------------*/}
       <div className="hero">
         <img src={homeBanner} alt="" className='w-full'/>
 
         <div className="search-container w-[30%]">
-          <div className='bg-white flex items-center gap-1 rounded-3xl'>
+          <div className='bg-white flex items-center gap-1 rounded-3xl mb-1'>
             <input type="search" className='search-input flex-1 py-3 pl-5 border-0 outline-none text-black' placeholder='Search Product.........' onChange={(e) => setSearch(e.target.value)} value={search}/>
             <button className='w-[40px]' ><img src={searchIcon} alt="" className='w-[40px] p-2'/></button>
           </div>
           
+          <div className="search-result max-h-[400px] overflow-auto">
+            {search.length > 0 &&
+              filteredSearch.slice(0, 5).map((cloth) => {
+                let clothPrice = cloth.price;
+                //console.log(cloth.id)
+            
+                if (currency.name === "ngn") {
+                  clothPrice = cloth.price;
+                }
+                else if (currency.name === "usd") {
+                  clothPrice = baseCurrency(clothPrice).toFixed()
+                }
 
-          {search.length > 0 &&
-            filteredSearch.slice(0, 3).map((cloth) => {
-              let clothPrice = cloth.price;
-              //console.log(cloth.id)
+                return (
+                  <Link to={`/cloth/${cloth.id}`} className="search-item-details bg-white text-black px-4 py-2 flex items-center justify-between gap-4 w-full my-4 text-left" key={cloth.id}>
+                    <img src={cloth.image} alt="image" width="80px"/>
+      
+                    <div className='cart-info flex-1'>
+                      <p>{cloth.name}</p>
+                      <p className='my-2'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
+                    </div>
+                  </Link>
+                )
+              })
+            }
+          </div>
           
-              if (currency.name === "ngn") {
-                clothPrice = cloth.price;
-              }
-              else if (currency.name === "usd") {
-                clothPrice = baseCurrency(clothPrice).toFixed()
-              }
-
-               return (
-                <div className="search-item-details bg-white text-black px-4 py-2 flex items-center justify-between gap-4 w-full my-4 text-left" key={cloth.id}>
-                <img src={cloth.image} alt="image" width="80px"/>
-    
-                <div className='cart-info flex-1'>
-                  <p>{cloth.name}</p>
-                  <p className='my-2'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
-                </div>
-              </div>
-              )
-            })
-          }
         </div>
 
         <Link className='absolute bottom-4 '>EXPLORE OUR NEW COLLECTION</Link>

@@ -5,9 +5,10 @@ import { ClothContext } from '../Context/Context.jsx'
 import { baseCurrency } from '../../Services/formatCurrency.js';
 import favIcon from '../../assets/heart-line.svg'
 import addToCartBtn from '../../assets/icons/shopping_bag_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png';
+import { Link } from 'react-router-dom';
 
 function Card() {
-  const {currency, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite} = React.useContext(ClothContext);
+  const {currency, details, setDetails, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite} = React.useContext(ClothContext);
   const [loading, setLoading] = React.useState(true);
   const addBtn = React.useRef(null);
 
@@ -69,6 +70,7 @@ function Card() {
             <img src={addToCartBtn} alt="" />
           </button>
         </div>
+        <Link to={`/cloth/${cloth.id}`} className='bg-black text-white py-2.5 text-center'> View Details</Link>
       </div>
     )
   })

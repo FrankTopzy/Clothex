@@ -7,7 +7,7 @@ import deleteIcon from '../../assets/icons/delete_24dp_E3E3E3_FILL0_wght400_GRAD
 
 
 function Cart() {
-  const {cartRef, cart,setCart, removeFromCart, currency, cartId} = useContext(ClothContext)
+  const {cartRef, cart,setCart, removeFromCart, currency, cartId, handleCountChange} = useContext(ClothContext)
 
 
   let total = 0;
@@ -20,25 +20,10 @@ function Cart() {
     }
   })
 
-  const handleCountChange = (id, action) => {// When updating state in React, it's a good practice to use the set function provided by useState to ensure that state updates are handled correctly and consistently.
-        setCart(prevCart =>
-            prevCart.map(item => {
-                if (item.id === id) {
-                    if (action === 'increment') {
-                        return { ...item, count: item.count + 1 };
-                    } else if (action === 'decrement' && item.count > 1) {
-                        return { ...item, count: item.count - 1 };
-                    }
-                }
-                return item;
-            })
-        );
-    };
-
 
   /*--------------------------------------------------------------------------------- CART CONTAINER -----------------------------------------------------------------------------------------------------*/
   return (
-    <div className="cart bg-white text-black fixed top-0 right-[-200%] w-[375px] z-50 h-screen py-8 px-4 shadow-lg overflow-auto text-center" id='cart' ref={cartRef}>
+    <div className="cart bg-white text-black fixed top-0 right-[-200%] max-w-[430px] z-50 h-screen py-8 px-4 shadow-lg overflow-auto text-center" id='cart' ref={cartRef}>
         <h1 className='text-4xl font-semibold'>Your Cart</h1>
 
         {cart.length === 0 && <p className='text-center pt-5'>Your cart is empty</p>}
