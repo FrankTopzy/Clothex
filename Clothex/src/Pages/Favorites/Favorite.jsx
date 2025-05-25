@@ -16,7 +16,7 @@ function Favorite() {
   if (favorite && !hasRun.current) {
     return (
      <div className='favorite text-black bg-white p-0'>
-      <h2 className='text-3xl font-semibold'>Your Favorites</h2>
+      <h2 className='text-2xl sm:text-3xl font-semibold mb-6'>Your Favorites</h2>
       {favorite.length === 0 && <div className='text-center pt-5'>
           <div className='empty-favorite text-black bg-white'>
             <div className='no-fav w-[60%] h-[300px] text-center rounded-[5px]'>

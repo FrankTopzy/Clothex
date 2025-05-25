@@ -1,6 +1,7 @@
 .favorite {
   min-height: 98vh;
-  padding: 150px 3% 40px;
+  padding: 10px 2% 10px;
+  margin: 120px 0% 10px;
 }
 
 .no-fav {
@@ -21,4 +22,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 468px) {
+  .favorite {
+    margin: 90px 0% 10px;
+  }
 }

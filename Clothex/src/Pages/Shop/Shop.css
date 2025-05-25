@@ -1,3 +1,10 @@
 .shop {
-  padding: 150px 3% 40px;
+  margin: 120px 0% 10px;
+  padding: 10px 2% 10px;
+}
+
+@media (max-width: 468px) {
+  .shop {
+    margin: 90px 0% 40px;
+  }
 }

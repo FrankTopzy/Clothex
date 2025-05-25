@@ -3,11 +3,12 @@ import './Navbar.css'
 import logo from '../../assets/clothex_logo.png'
 import { Link } from 'react-router-dom'
 import cartIcon from '../../assets/cart_icon.png'
+import menuIcon from '../../assets/icons/menu-left.png'
 import { ClothContext } from '../Context/Context'
 
 function Navbar() {
  const navRef = useRef();
- const {setCurrency, currency, cartRef, cart} = React.useContext(ClothContext);
+ const {setCurrency, currency, cartRef, cart, setSidebar} = React.useContext(ClothContext);
 
  /*useEffect(() => {
   window.addEventListener('scroll', () => {
@@ -42,10 +43,16 @@ function Navbar() {
         <Link>OUR STORE</Link>
       </div>
 
-      <Link to={"/"} className="logo flex items-center">
-        <img src={logo} alt="" className='logo-img w-[60px] h-[50px] bg-white rounded-[50%]'/>
-        <p className='text-[20px] font-semibold '>CLOTHEX</p>
-      </Link>
+      <div className="logo flex items-center">
+        <div className='menuIcon' onClick={() => {setSidebar(prev => prev === false ? true : false)}}>
+          <img src={menuIcon} alt="" />
+        </div>
+        
+        <Link to={"/"}>
+          <img src={logo} alt="" className='logo-img w-[60px] h-[50px] bg-white rounded-[50%]'/>
+          <p className='text-[20px] font-semibold '>CLOTHEX</p>
+        </Link>
+      </div>
 
       <div className="nav-right flex items-center gap-5">
         <select name="" id="" className='outline-none' onChange={currencyHandler}>

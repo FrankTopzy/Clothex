@@ -11,6 +11,8 @@ const ClothContextProvider = (props) => {
   });
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem("favorite")) || []);
+  const [loading, setLoading] = useState(true);
+  const [sidebar, setSidebar] = useState(false)
 
   //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -92,6 +94,10 @@ const ClothContextProvider = (props) => {
     removeFromFavorite,
     isFavorite,
     handleCountChange,
+    setLoading,
+    loading,
+    sidebar, 
+    setSidebar,
   }
 
   return (

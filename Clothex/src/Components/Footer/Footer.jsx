@@ -51,7 +51,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className='display flex justify-between items-center py-[40px] px-[100px]'>
+        <div className='copyright flex justify-between items-center py-[40px] px-[100px]'>
           <p className='text-[12px]'>© 2025 CLothex by FRANK All Rights Reserved</p>
           <Link to={"/"} className='text-2xl font-semibold'>CLOTHEX</Link>
         </div>

@@ -8,8 +8,15 @@
   z-index: 20;
 }
 
-.navbar .logo{
+.navbar .logo > a{
   flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-right: 15px;
+}
+
+.menuIcon {
+  display: none;
 }
 
 /*.navbar > div a:hover {
@@ -54,13 +61,22 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 10px 2%;
+  }
+
   .nav-left,
   .nav-right > a {
     display: none;
   }
 
+  .menuIcon {
+    display: block;
+  } 
+
   .logo .logo-img {
-    width: 50px;
+    height: 40px;
+    width: 40px;
   }
 
   .logo p{

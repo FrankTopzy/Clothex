@@ -22,6 +22,7 @@
 .middle {
   opacity: 0;
   animation: appear 0.5s ease-in 1s forwards;
+  max-width: 600px;
 }
 
 .in, .de {
@@ -52,6 +53,10 @@
   color: red;
 }
 
+.middle > div::-webkit-scrollbar {
+  display: none;
+}
+
 
 @keyframes appear {
   0% {
@@ -78,7 +83,7 @@
     font-size: 14px;
   }
 
-  .middle img{
+  .middle > div img{
     width: 500px;
   }
 }
@@ -89,7 +94,7 @@
     font-size: 12px;
   }
 
-  .middle img{
+  .middle > div img{
     width: 350px;
   }
 }
@@ -109,7 +114,7 @@
     order: -1;
   }
 
-  .middle img {
+  .middle > div img {
     object-position: center;
     object-fit: cover;
   }
@@ -131,7 +136,7 @@
     order: -1;
   }
 
-  .middle img {
+  .middle > div img {
     object-position: center;
     object-fit: cover;
   }

@@ -8,14 +8,13 @@ import addToCartBtn from '../../assets/icons/shopping_bag_24dp_E3E3E3_FILL0_wght
 import { Link } from 'react-router-dom';
 
 function Card() {
-  const {currency, details, setDetails, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite} = React.useContext(ClothContext);
-  const [loading, setLoading] = React.useState(true);
+  const {currency, details, setDetails, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite, setLoading} = React.useContext(ClothContext);
   const addBtn = React.useRef(null);
 
 
   useEffect(() => {
+    setLoading(false)
     setClothes(products.slice(0, 10));
-    setLoading(false);
   }, [currency]);
 
   const addToCartClick = (cloth) => {
@@ -53,8 +52,6 @@ function Card() {
 
     return (
       <div className='card' key={index}>
-        {loading && <div>Loading....</div>}
-
         <div className='img relative'>
           <img src={cloth.image} alt={cloth.name} className='cloth-img'/>
           <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={handleFaveBtn}>♥</button>

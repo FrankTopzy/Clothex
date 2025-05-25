@@ -1,9 +1,13 @@
-import React, { use, useContext, useState } from 'react'
+import React, { use, useContext, useRef, useState } from 'react'
 import { products } from '../../Data/product.js'
 import Styles from "./Cloth.module.css"
 import checkbox from '../../assets/icons/checkbox.png'
 import plus from '../../assets//icons/plus.png'
 import clo from '../../assets/Clothes/hf/HF FLOWER SPANDEX WHITE TEE.jpg'
+import clo2 from '../../assets/Clothes/hf/HF HUNTER BEANIE BLACK.jpg'
+import clo3 from '../../assets/Clothes/hf/HF Football Jersey- Green.jpg'
+import caretRight from '../../assets/icons/caret-right.png'
+import caretLeft from '../../assets/icons/caret-Left.png'
 import { ClothContext } from '../../Components/Context/Context'
 import { useParams } from 'react-router-dom'
 
@@ -11,6 +15,7 @@ function Cloth() {
   const {currency, addToCart, isFavorite, removeFromFavorite, addToFavorite } = useContext(ClothContext);
   const [isOpen, setIsOpen] = useState({});
   const { id } = useParams();
+  const gallery = useRef();
 
 
   const clothInformation = products.filter((cloth) => cloth.id === id);
@@ -56,7 +61,7 @@ function Cloth() {
 
 
   return (
-    <div className={`${Styles.cloth_container} min-h-[100vh] bg-white text-black flex mt-[100px] justify-between items-center px-9 uppercase`}>
+    <div className={`${Styles.cloth_container} min-h-[100vh] bg-white text-black flex gap-[100px] mt-[100px] justify-between items-center px-9 uppercase`}>
       <div className={`${Styles.left_hand} w-[400px]`}>
         <div className='flex justify-between max-w-[400px] items-center mb-[40px]'>
           <p className='flex flex-col'>
@@ -70,8 +75,14 @@ function Cloth() {
         {clothInfoHTML}
       </div>
 
-      <div className={`${Styles.middle} flex-1 flex justify-center`}>
-        <img src={clo}  alt={clothInformation[0].name} width={600}/>
+      <div className={`${Styles.middle} flex-1 flex`}>
+        <button className='outline-none' onClick={() => {gallery.current.scrollLeft -= 550; gallery.current.style.scrollBehavior = 'smooth';}}><img src={caretLeft} alt="" width={40}/></button>
+        <div className={`flex-1 flex overflow-x-scroll border-1`} ref={gallery}>
+          <img src={clo}  alt={clothInformation[0].name} width={600} className='w-full'/>
+          <img src={clo2}  alt={clothInformation[0].name} width={600}/>
+          <img src={clo3}  alt={clothInformation[0].name} width={600} className='w-full'/>
+        </div>
+        <button className='outline-none' onClick={() => {gallery.current.scrollLeft += 550; gallery.current.style.scrollBehavior = 'smooth';}}> <img src={caretRight} alt="" width={40}/></button>
       </div>
 
       <div className={`${Styles.right_hand} w-[400px]`}>

@@ -1,6 +1,6 @@
 .footer-upper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 50px;
   border-bottom: 1px solid #000000;
 }
@@ -70,5 +70,19 @@
 
   .footer-upper > div:first-child {
     width: 100%;
+  }
+
+  .copyright {
+    padding-inline: 40px;
+  }
+}
+
+@media (max-width: 468px) {
+  .footer-upper {
+    gap: 10px;
+  }
+
+  .footer-upper > div {
+    padding-block: 10px;
   }
 }

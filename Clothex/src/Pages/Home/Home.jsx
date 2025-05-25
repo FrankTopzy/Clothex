@@ -9,10 +9,10 @@ import { ClothContext } from '../../Components/Context/Context'
 import { products } from '../../Data/product'
 import { baseCurrency } from '../../Services/formatCurrency'
 import Cart from '../../Components/Cart/Cart'
+import spinner from '../../assets/spinner.gif'
 
 function Home() {
-  const {cartRef, cart, count,setCount, removeFromCart, currency, setClothes, clothes} = useContext(ClothContext)
-  const [loading, setLoading] = React.useState(true);
+  const {cartRef, cart, count,setCount, removeFromCart, currency, setClothes, clothes, loading} = useContext(ClothContext)
   const [search, setSearch] = useState("");
   const [filteredSearch, setFilteredSearch] = useState([])
 
@@ -32,8 +32,8 @@ function Home() {
   
 
   return (
-    
     <div className='home'>
+      {loading && <div className='fixed w-full h-screen bg-white left-0 z-50 flex items-center justify-center'><img src={spinner} alt="" className='w-70px'/></div>}
       {/*------------------------------------------------------------------------------------------------------ MAIN SECTION ------------------------------------------------------------------------------------------------*/}
       <div className="hero">
         <img src={homeBanner} alt="" className='w-full'/>
