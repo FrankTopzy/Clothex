@@ -78,7 +78,7 @@ function Cloth() {
       <div className={`${Styles.middle} flex-1 flex`}>
         <button className='outline-none' onClick={() => {gallery.current.scrollLeft -= 550; gallery.current.style.scrollBehavior = 'smooth';}}><img src={caretLeft} alt="" width={40}/></button>
         <div className={`flex-1 flex overflow-x-scroll border-1`} ref={gallery}>
-          <img src={clo}  alt={clothInformation[0].name} width={600} className='w-full'/>
+          <img src={"/" + (clothInformation[0].image).replace( / /g, "%20") /*or encodeURI(clothInformation[0].image))*/}  alt={clothInformation[0].name} width={600} className='w-full'/>
           <img src={clo2}  alt={clothInformation[0].name} width={600}/>
           <img src={clo3}  alt={clothInformation[0].name} width={600} className='w-full'/>
         </div>

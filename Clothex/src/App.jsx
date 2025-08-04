@@ -8,7 +8,7 @@ import Shop from "./Pages/Shop/Shop"
 import Favorite from "./Pages/Favorites/Favorite"
 import Cloth from "./Pages/ClothPage/Cloth"
 import Cart from "./Components/Cart/Cart"
-import Sidebar from "./Components/Responsive-navbar/navbar"
+import MiniNavbar from "./Components/Responsive-navbar/navbar"
 
 function App() {
 
@@ -16,8 +16,7 @@ function App() {
     <div className="app">
       <Navbar/>
       <Cart/>
-      <Sidebar/>
-
+      <MiniNavbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/favorite" element={<Favorite/>}/>

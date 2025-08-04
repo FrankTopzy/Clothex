@@ -7,12 +7,12 @@ import shopIcon from '../../assets/icons/shopping-bag-alt.png'
 import { Link } from 'react-router-dom'
 import { ClothContext } from '../Context/Context'
 
-function Sidebar() {
+function MiniNavbar() {
   const { sidebar, setSidebar } = useContext(ClothContext);
 
   const handleSidebar = () => {
     setSidebar(false);
-    console.log("clicked")
+    //console.log("clicked")
   }
 
   return (
@@ -45,4 +45,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default MiniNavbar

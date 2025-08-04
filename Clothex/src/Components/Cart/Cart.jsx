@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './Cart.css'
 import { ClothContext } from '../Context/Context';
 import { baseCurrency } from '../../Services/formatCurrency';
@@ -12,13 +12,9 @@ function Cart() {
 
   let total = 0;
 
-  cart.forEach((cloth) => {
-    if (currency.name === "ngn") {
-      total += cloth.price * cloth.count;
-    } else if (currency.name === "usd") {
-      total += baseCurrency(cloth.price) * cloth.count;
-    }
-  })
+  useEffect(() => {
+    cartRef.current.scrollTop = cartRef.current.scrollHeight;
+  }, [cart]);
 
 
   /*--------------------------------------------------------------------------------- CART CONTAINER -----------------------------------------------------------------------------------------------------*/
@@ -29,9 +25,15 @@ function Cart() {
         {cart.length === 0 && <p className='text-center pt-5'>Your cart is empty</p>}
 
         {
-          cart.map((cloth, index) => {
+          cart.map((cloth) => {
+            if (currency.name === "ngn") {
+              total += cloth.price * cloth.count;
+            } else if (currency.name === "usd") {
+              total += baseCurrency(cloth.price) * cloth.count;
+            }
+            
             return(
-              <div className="cart-item-details flex items-center justify-between gap-4 w-full my-4 text-left" key={index}>
+              <div className="cart-item-details flex items-center justify-between gap-4 w-full my-4 text-left" key={cloth.id}>
                 <img src={cloth.image} alt="" width="80px"/>
 
                 <div className='cart-info flex-1'>

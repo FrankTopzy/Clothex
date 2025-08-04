@@ -28,7 +28,7 @@ function Card() {
 
   
 
-  const itemList = clothes.map((cloth, index) => {
+  const itemList = clothes.map((cloth) => {
 
     const favorite = isFavorite(cloth.id)
 
@@ -37,7 +37,6 @@ function Card() {
       else addToFavorite(cloth)
 
       console.log("clicked");
-      
     }
 
     let clothPrice = cloth.price;
@@ -51,7 +50,7 @@ function Card() {
     }
 
     return (
-      <div className='card' key={index}>
+      <div className='card' key={cloth.id}>
         <div className='img relative'>
           <img src={cloth.image} alt={cloth.name} className='cloth-img'/>
           <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={handleFaveBtn}>♥</button>

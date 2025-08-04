@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 import { ClothContext } from '../../Components/Context/Context'
 import Card from '../../Components/Itemcard/Card'
 import Cart from '../../Components/Cart/Cart'
+import spinner from '../../assets/spinner.gif'
 
 function Favorite() {
-  const { favorite, setClothes, clothes, currency } = useContext(ClothContext)
+  const { favorite, setClothes, clothes, currency, loading } = useContext(ClothContext)
   const hasRun = useRef(false);
 
   useEffect(() => {
@@ -16,6 +17,8 @@ function Favorite() {
   if (favorite && !hasRun.current) {
     return (
      <div className='favorite text-black bg-white p-0'>
+      {loading && <div className='fixed w-full h-screen bg-white left-0 z-50 flex items-center justify-center'><img src={spinner} alt="" className='w-[70px]'/></div>}
+      
       <h2 className='text-2xl sm:text-3xl font-semibold mb-6'>Your Favorites</h2>
       {favorite.length === 0 && <div className='text-center pt-5'>
           <div className='empty-favorite text-black bg-white'>
