@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className='footer p-5'>
+    <div className='footer py-[50px] px-[10px] w-full'>
       <div className='footer-container bg-white uppercase text-black'>
         <div className='footer-upper text-[12px]'>
           <div className='max-w-[500px]'>
-            <h1>get 10% off your next order</h1>
+            <h1 className='mt-[20px]'>get 10% off your next order</h1>
 
             <form action="" className='w-full'>
               <input type="text" placeholder='NAME' />
