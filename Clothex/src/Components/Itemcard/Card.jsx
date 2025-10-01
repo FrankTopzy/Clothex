@@ -66,7 +66,7 @@ function Card() {
             <img src={addToCartBtn} alt="" />
           </button>
         </div>
-        <Link to={`/cloth/${cloth.id}`} className='bg-black text-white py-2.5 text-center'> View Details</Link>
+        <Link to={`/cloth/${cloth.id}`} onClick={() => scrollTo(0, 0)} className='bg-black text-white py-2.5 text-center'> View Details</Link>
       </div>
     )
   })

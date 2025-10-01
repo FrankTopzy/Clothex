@@ -38,7 +38,7 @@ function Navbar() {
   return (
     <div className='navbar flex justify-between items-center text-amber-50' ref={navRef}>
       <div className="nav-left flex items-center gap-5">
-        <Link to={"/shop"}>SHOP</Link>
+        <Link to={"/shop"} onClick={() => scrollTo(0, 0)}>SHOP</Link>
         <Link>ABOUT</Link>
         <Link>OUR STORE</Link>
       </div>
@@ -61,7 +61,7 @@ function Navbar() {
         </select>
 
         <Link>LOGIN</Link>
-        <Link to={"/favorite"}>FAVORITES</Link>
+        <Link to={"/favorite"} onClick={() => scrollTo(0, 0)}>FAVORITES</Link>
         
         <div className='relative'>
           <img src={cartIcon} alt="" width="40px" onClick={() => {cartRef.current.style.right = '0'} } className="cart-icon cursor-pointer"/> 
