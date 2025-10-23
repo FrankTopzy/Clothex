@@ -3,7 +3,6 @@ import './Favorite.css'
 import { Link } from 'react-router-dom'
 import { ClothContext } from '../../Components/Context/Context'
 import Card from '../../Components/Itemcard/Card'
-import Cart from '../../Components/Cart/Cart'
 import spinner from '../../assets/spinner.gif'
 
 function Favorite() {

@@ -3,7 +3,6 @@ import './Shop.css'
 import Card from '../../Components/Itemcard/Card'
 import { ClothContext } from '../../Components/Context/Context';
 import { products } from '../../Data/product';
-import Cart from '../../Components/Cart/Cart';
 
 function Shop() {
   const {clothes, setClothes, currency} = React.useContext(ClothContext);

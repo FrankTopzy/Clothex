@@ -4,11 +4,9 @@ import homeBanner from '../../assets/bg-img/bg-1.jpg'
 import { Link } from 'react-router-dom'
 import Card from '../../Components/Itemcard/Card'
 import searchIcon from '../../assets/icons/search_24dp_00000_FILL0_wght400_GRAD0_opsz24.png'
-import male from '../../assets/Clothes/hf/HF FLOWER SPANDEX WHITE TEE.jpg'
 import { ClothContext } from '../../Components/Context/Context'
 import { products } from '../../Data/product'
 import { baseCurrency } from '../../Services/formatCurrency'
-import Cart from '../../Components/Cart/Cart'
 import spinner from '../../assets/spinner.gif'
 
 function Home() {

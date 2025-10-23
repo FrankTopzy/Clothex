@@ -3,7 +3,6 @@ import './Card.css'
 import { products } from '../../Data/product.js'
 import { ClothContext } from '../Context/Context.jsx'
 import { baseCurrency } from '../../Services/formatCurrency.js';
-import favIcon from '../../assets/heart-line.svg'
 import addToCartBtn from '../../assets/icons/shopping_bag_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png';
 import { Link } from 'react-router-dom';
 
