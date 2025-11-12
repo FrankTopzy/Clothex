@@ -1,14 +1,14 @@
 export const products = [{
   id: "1hf",
   name: "HF FLOWER SPANDEX WHITE TEE",
-  image: "src/assets/Clothes/hf/HF FLOWER SPANDEX WHITE TEE.jpg",
+  image: "../../assets/Clothes/hf/HF FLOWER SPANDEX WHITE TEE.jpg",
   imageAlt: "/src/assets/Clothes/hf/HF%20FLOWER%20SPANDEX%20WHITE%20TEE.jpg",
   price: 240000,
   quantity: 10,
 }, {
   id: "2hf",
   name: "HF Football Jersey- Green",
-  image: "src/assets/Clothes/hf/HF Football Jersey- Green.jpg",
+  image: "../../assets/Clothes/hf/HF Football Jersey- Green.jpg",
   price: 320000,
   quantity: 10,
 }, {
