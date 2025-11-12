@@ -75,7 +75,7 @@ function Home() {
       </div>
 
       <div className="products-container px-[3%] py-[40px] bg-white text-black min-h-screen">
-        <div className="heading flex justify-between">
+        <div className="heading flex justify-between mb-6">
           <p>NEW IN</p>
           <p>EXPLORE NOW</p>
         </div>
