@@ -7,7 +7,7 @@ import clo from '../../assets/Clothes/hf/HF FLOWER SPANDEX WHITE TEE.jpg'
 import clo2 from '../../assets/Clothes/hf/HF HUNTER BEANIE BLACK.jpg'
 import clo3 from '../../assets/Clothes/hf/HF Football Jersey- Green.jpg'
 import caretRight from '../../assets/icons/caret-right.png'
-import caretLeft from '../../assets/icons/caret-Left.png'
+import caretLeft from '../../assets/icons/caret-left.png'
 import { ClothContext } from '../../Components/Context/Context'
 import { useParams } from 'react-router-dom'
 
