@@ -9,6 +9,7 @@ import Favorite from "./Pages/Favorites/Favorite"
 import Cloth from "./Pages/ClothPage/Cloth"
 import Cart from "./Components/Cart/Cart"
 import MiniNavbar from "./Components/Responsive-navbar/navbar"
+import About from "./Pages/AboutPage/About"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cloth/:id" element={<Cloth/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/shop" element={<Shop/>}/>
+        <Route path="/about" element={<About/>}/>
       </Routes>
       
       <Footer/>
