@@ -34,7 +34,7 @@ function Home() {
       {loading && <div className='fixed w-full h-screen bg-white left-0 z-50 flex items-center justify-center'><img src={spinner} alt="" className='w-[70px]'/></div>}
       {/*------------------------------------------------------------------------------------------------------ MAIN SECTION ------------------------------------------------------------------------------------------------*/}
       <div className="hero">
-        <img src={homeBanner} alt="" className='w-full'/>
+        <img src={homeBanner} alt="" className='w-full min-h-screen'/>
 
         <div className="search-container w-[30%]">
           <div className='bg-white flex items-center gap-1 rounded-3xl mb-1'>
