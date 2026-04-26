@@ -12,7 +12,8 @@ const ClothContextProvider = (props) => {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem("favorite")) || []);
   const [loading, setLoading] = useState(true);
-  const [sidebar, setSidebar] = useState(false)
+  const [sidebar, setSidebar] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -98,6 +99,8 @@ const ClothContextProvider = (props) => {
     loading,
     sidebar, 
     setSidebar,
+    imageLoaded,
+    setImageLoaded
   }
 
   return (
