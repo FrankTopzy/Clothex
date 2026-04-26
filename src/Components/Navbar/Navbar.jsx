@@ -40,7 +40,7 @@ function Navbar() {
       <div className="nav-left flex items-center gap-5">
         <Link to={"/shop"} onClick={() => scrollTo(0, 0)}>SHOP</Link>
         <Link to={'/about'}>ABOUT</Link>
-        <Link>OUR STORE</Link>
+        <Link to={'/store'}>OUR STORE</Link>
       </div>
 
       <div className="logo flex items-center">
