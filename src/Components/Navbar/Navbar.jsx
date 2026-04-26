@@ -39,7 +39,7 @@ function Navbar() {
     <div className='navbar flex justify-between items-center text-amber-50' ref={navRef}>
       <div className="nav-left flex items-center gap-5">
         <Link to={"/shop"} onClick={() => scrollTo(0, 0)}>SHOP</Link>
-        <Link>ABOUT</Link>
+        <Link to={'/about'}>ABOUT</Link>
         <Link>OUR STORE</Link>
       </div>
 
