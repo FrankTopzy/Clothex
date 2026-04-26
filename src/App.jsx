@@ -11,6 +11,7 @@ import Cart from "./Components/Cart/Cart"
 import MiniNavbar from "./Components/Responsive-navbar/navbar"
 import About from "./Pages/AboutPage/About"
 import Store from "./Pages/Store/Store"
+import Login from "./Pages/Login/Login"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/shop" element={<Shop/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/store" element={<Store/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
       
       <Footer/>
