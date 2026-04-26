@@ -1,6 +1,6 @@
 import React, { use, useContext, useEffect, useState } from 'react'
 import './Home.css'
-import homeBanner from '../../assets/bg-img/bg-1.jpg'
+import homeBanner from '/assets/bg-img/bg-1.jpg'
 import { Link } from 'react-router-dom'
 import Card from '../../Components/Itemcard/Card'
 import searchIcon from '../../assets/icons/search_24dp_00000_FILL0_wght400_GRAD0_opsz24.png'
