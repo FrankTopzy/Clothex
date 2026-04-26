@@ -5,9 +5,11 @@ import { ClothContext } from '../Context/Context.jsx'
 import { baseCurrency } from '../../Services/formatCurrency.js';
 import addToCartBtn from '../../assets/icons/shopping_bag_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png';
 import { Link } from 'react-router-dom';
+import LoaderFile from '../Loader/LoaderFile.jsx';
+
 
 function Card() {
-  const {currency, details, setDetails, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite, setLoading} = React.useContext(ClothContext);
+  const {currency, details, setDetails, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite, setLoading, imageLoaded, setImageLoaded} = React.useContext(ClothContext);
   const addBtn = React.useRef(null);
 
 
@@ -51,7 +53,10 @@ function Card() {
     return (
       <div className='card' key={cloth.id}>
         <div className='img relative'>
-          <img src={cloth.image} alt={cloth.name} className='cloth-img min-h-70'/>
+          <div className='min-h-70'>
+            {!imageLoaded &&  <div className='h-70 flex items-center justify-center bg-red-900'><LoaderFile /></div>}
+            <img src={cloth.image} alt={cloth.name} onLoad={() => setImageLoaded(true)} className='cloth-img'/>
+          </div>
           <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={handleFaveBtn}>♥</button>
         </div>
 
