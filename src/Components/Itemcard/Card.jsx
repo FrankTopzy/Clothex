@@ -51,7 +51,7 @@ function Card() {
     return (
       <div className='card' key={cloth.id}>
         <div className='img relative'>
-          <img src={cloth.image} alt={cloth.name} className='cloth-img'/>
+          <img src={cloth.image} alt={cloth.name} className='cloth-img min-h-70'/>
           <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={handleFaveBtn}>♥</button>
         </div>
 
