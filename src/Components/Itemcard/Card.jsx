@@ -54,7 +54,7 @@ function Card() {
       <div className='card' key={cloth.id}>
         <div className='img relative'>
           <div className='min-h-70'>
-            {!imageLoaded &&  <div className='h-70 flex items-center justify-center bg-red-900'><LoaderFile /></div>}
+            {!imageLoaded &&  <div className='h-70 flex items-center justify-center'><LoaderFile /></div>}
             <img src={cloth.image} alt={cloth.name} onLoad={() => setImageLoaded(true)} className='cloth-img'/>
           </div>
           <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={handleFaveBtn}>♥</button>
