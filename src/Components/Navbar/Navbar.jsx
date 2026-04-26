@@ -60,7 +60,7 @@ function Navbar() {
           <option value="usd">USD</option>
         </select>
 
-        <Link>LOGIN</Link>
+        <Link to={'/login'}>LOGIN</Link>
         <Link to={"/favorite"} onClick={() => scrollTo(0, 0)}>FAVORITES</Link>
         
         <div className='relative'>
