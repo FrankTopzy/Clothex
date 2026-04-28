@@ -21,7 +21,7 @@ function Shop() {
 
   return (
     <div className='shop min-h-screen bg-white text-black'>
-      <h1 className='pb-5 text-2xl sm:text-3xl text-center sm:text-left font-semibold uppercase'>Shop</h1>
+      <h1 className='pb-5 text-2xl sm:text-3xl text-center lg:text-left font-semibold uppercase'>Shop</h1>
       <Card/>
 
       <button className='py-2 px-6 text-white bg-black mt-8 flex justify-self-center' onClick={loadMore}>Load More</button>
