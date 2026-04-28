@@ -13,6 +13,7 @@ import About from "./Pages/AboutPage/About"
 import Store from "./Pages/Store/Store"
 import Login from "./Pages/Login/Login"
 import { useEffect, useState } from "react"
+import Payment from "./Pages/Payment/Payment"
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -48,6 +49,7 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/store" element={<Store/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/clothexPay" element={<Payment/>}/>
       </Routes>
   
       <Footer/>
