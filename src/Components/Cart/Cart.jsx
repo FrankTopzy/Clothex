@@ -57,7 +57,7 @@ function Cart() {
         <hr className='bg-gray-400 border-0 h-[1px]'/>
         
         <p className='text-right'>Total: {currency.symbol} {total.toLocaleString()}</p>
-        <button className='bg-black text-white py-2 px-4' onClick={() => navigate('/clothexPay')}>Buy now</button>
+        <button className='bg-black text-white py-2 px-4' onClick={() => {navigate('/clothexPay'); scrollTo(0,0)}}>Buy now</button>
 
         
         <img src={closeIcon} alt="" className='bg-black absolute top-[10px] right-[10px] cursor-pointer' onClick={() => {cartRef.current.style.right = '-200%'}}/>
