@@ -18,7 +18,7 @@ function Favorite() {
      <div className='favorite text-black bg-white p-0'>
       {loading && <div className='fixed w-full h-screen bg-white left-0 z-50 flex items-center justify-center'><img src={spinner} alt="" className='w-[70px]'/></div>}
       
-      <h2 className='text-2xl sm:text-3xl font-semibold mb-6 uppercase'>Your Favorites</h2>
+      <h2 className='text-2xl sm:text-3xl text-center sm:text-left font-semibold mb-6 uppercase'>Your Favorites</h2>
       {favorite.length === 0 && <div className='text-center pt-5'>
           <div className='empty-favorite text-black bg-white'>
             <div className='no-fav w-[60%] h-[300px] text-center rounded-[5px]'>
