@@ -4,10 +4,12 @@ import { ClothContext } from '../Context/Context';
 import { baseCurrency } from '../../Services/formatCurrency';
 import closeIcon from '../../assets/icons/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
 import deleteIcon from '../../assets/icons/delete_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
+import { useNavigate } from 'react-router-dom';
 
 
 function Cart() {
   const {cartRef, cart,setCart, removeFromCart, currency, cartId, handleCountChange} = useContext(ClothContext)
+  const navigate = useNavigate();
 
 
   let total = 0;
@@ -55,7 +57,7 @@ function Cart() {
         <hr className='bg-gray-400 border-0 h-[1px]'/>
         
         <p className='text-right'>Total: {currency.symbol} {total.toLocaleString()}</p>
-        <button className='bg-black text-white py-2 px-4'>Buy now</button>
+        <button className='bg-black text-white py-2 px-4' onClick={() => navigate('/clothexPay')}>Buy now</button>
 
         
         <img src={closeIcon} alt="" className='bg-black absolute top-[10px] right-[10px] cursor-pointer' onClick={() => {cartRef.current.style.right = '-200%'}}/>
