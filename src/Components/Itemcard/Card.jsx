@@ -53,7 +53,7 @@ function Card() {
     return (
       <div className='card' key={cloth.id}>
         <div className='img relative'>
-          <div className='h-100 relative'>
+          <div className='sm:h-100 h-full relative'>
             {!imageLoaded &&  <div className='flex items-center justify-center absolute w-full h-full'><LoaderFile /></div>}
             <img src={cloth.image} alt={cloth.name} onLoad={() => setImageLoaded(true)} className='cloth-img'/>
           </div>
