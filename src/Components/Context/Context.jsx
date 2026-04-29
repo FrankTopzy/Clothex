@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useRef, useState } from 'react'
 
 export const ClothContext = createContext();
 
@@ -14,6 +14,7 @@ const ClothContextProvider = (props) => {
   const [loading, setLoading] = useState(true);
   const [sidebar, setSidebar] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const cartIconRef = useRef(null);
 
   //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -100,7 +101,8 @@ const ClothContextProvider = (props) => {
     sidebar, 
     setSidebar,
     imageLoaded,
-    setImageLoaded
+    setImageLoaded,
+    cartIconRef
   }
 
   return (
