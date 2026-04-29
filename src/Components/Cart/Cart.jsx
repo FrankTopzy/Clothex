@@ -27,7 +27,7 @@ function Cart() {
 
   /*--------------------------------------------------------------------------------- CART CONTAINER -----------------------------------------------------------------------------------------------------*/
   return (
-    <div className="cart active bg-white text-black fixed top-0 right-[-200%] max-w-[430px] z-50 h-screen py-8 px-4 shadow-lg overflow-auto text-center" tabIndex={'0'} id='cart' ref={cartRef}>
+    <div className="cart active bg-white text-black fixed top-0 right-[-200%] w-full max-w-[430px] z-50 h-screen py-8 px-4 shadow-lg overflow-auto text-center" tabIndex={'0'} id='cart' ref={cartRef}>
         <h1 className='text-2xl sm:text-3xl font-semibold uppercase'>Your Cart</h1>
 
         {cart.length === 0 && <p className='text-center pt-5'>Your cart is empty</p>}
