@@ -71,7 +71,7 @@ function Home() {
           
         </div>
 
-        <Link className='absolute bottom-4 '>EXPLORE OUR NEW COLLECTION</Link>
+        <Link className='absolute bottom-4 ' to={"/shop"} onClick={() => scrollTo(0, 0)} >EXPLORE OUR NEW COLLECTION</Link>
       </div>
 
       <div className="products-container px-[3%] py-[40px] bg-white text-black min-h-screen">
