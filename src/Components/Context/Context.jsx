@@ -15,6 +15,7 @@ const ClothContextProvider = (props) => {
   const [sidebar, setSidebar] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const cartIconRef = useRef(null);
+  const deleteIconRef = useRef(null);
 
   //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -102,7 +103,8 @@ const ClothContextProvider = (props) => {
     setSidebar,
     imageLoaded,
     setImageLoaded,
-    cartIconRef
+    cartIconRef,
+    deleteIconRef
   }
 
   return (
