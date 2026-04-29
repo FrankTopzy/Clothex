@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Cart() {
-  const {cartRef, cart,setCart, removeFromCart, currency, cartId, handleCountChange, cartIconRef} = useContext(ClothContext)
+  const {cartRef, cart,setCart, removeFromCart, currency, cartId, handleCountChange, cartIconRef, deleteIconRef} = useContext(ClothContext)
   const navigate = useNavigate();
 
 
@@ -54,7 +54,7 @@ function Cart() {
                   </div>
                 </div>
 
-                <img src={deleteIcon} alt="" className='bg-black rounded-full p-1 cursor-pointer' onClick={() => removeFromCart(cloth.id)}/>
+                <button ref={deleteIconRef}><img src={deleteIcon} alt="" className='bg-black rounded-full p-1 cursor-pointer' onClick={() => removeFromCart(cloth.id)}/></button>
               </div>
             )
           })
