@@ -8,9 +8,11 @@ import { ClothContext } from '../../Components/Context/Context'
 import { products } from '../../Data/product'
 import { baseCurrency } from '../../Services/formatCurrency'
 import spinner from '../../assets/spinner.gif'
+import addToCartBtn from '../../assets/icons/shopping_bag_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png';
+
 
 function Home() {
-  const {cartRef, cart, count,setCount, removeFromCart, currency, setClothes, clothes, loading} = useContext(ClothContext)
+  const {cartRef, cart, count,setCount, removeFromCart, currency, setClothes, clothes, loading, addToCart} = useContext(ClothContext)
   const [search, setSearch] = useState("");
   const [filteredSearch, setFilteredSearch] = useState([])
 
@@ -26,6 +28,10 @@ function Home() {
       
     }))
   }, [search])
+
+    const addToCartClick = (cloth) => {
+      addToCart(cloth)
+    }
   
   
 
@@ -56,14 +62,22 @@ function Home() {
                 }
 
                 return (
-                  <Link to={`/cloth/${cloth.id}`} className="search-item-details bg-white text-black px-4 py-2 flex items-center justify-between gap-4 w-full my-4 text-left" key={cloth.id}>
-                    <img src={cloth.image} alt="image" width="80px"/>
-      
-                    <div className='cart-info flex-1'>
-                      <p>{cloth.name}</p>
-                      <p className='my-2'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
-                    </div>
-                  </Link>
+                  <div key={cloth.id} className='relative'>
+                    <Link to={`/cloth/${cloth.id}`} className="search-item-details bg-white text-black px-4 py-2 flex items-center justify-between gap-4 w-full my-4 text-left">
+                      <img src={cloth.image} alt="image" width="80px"/>
+        
+                      <div className='cart-info flex-1'>
+                        <p>{cloth.name}</p>
+                        <p className='my-2'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
+                        <p className='text-sm text-gray-400'>{cart.some(cartItem => cartItem.id === cloth.id) ? 'Already in cart.' : 'Not in cart yet.'} </p>
+                      </div>
+                    </Link>
+
+                    <button className='bg-black p-2 rounded-full flex justify-center absolute top-[33%] right-2' onClick={() => {addToCartClick(cloth); alert('Added!')}}>
+                      <img src={addToCartBtn} alt="" />
+                    </button>
+                  </div>
+                  
                 )
               })
             }
