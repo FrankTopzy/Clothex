@@ -66,7 +66,7 @@ function Card() {
             <p className='cloth-price'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
           </div>
 
-          <button className='bg-black p-2 rounded-full flex justify-center' onClick={() => {addToCartClick(cloth); cartRef.current.style.right = '0'}} ref={addBtn}>
+          <button className='bg-black p-2 rounded-full flex justify-center' onClick={() => {addToCartClick(cloth); alert('Added!')}} ref={addBtn}>
             <img src={addToCartBtn} alt="" />
           </button>
         </div>
