@@ -13,16 +13,17 @@ function MiniNavbar() {
   const handleSidebar = () => {
     setSidebar(false);
     //console.log("clicked")
+    scrollTo(0, 0);
   }
 
   return (
-    <div className={`${Styles.sidebar} ${sidebar ? Styles.show_sidebar : ""} bg-white text-black fixed z-20 w-full top-[85px]`}>
+    <div className={`${Styles.sidebar} ${sidebar ? Styles.show_sidebar : ""} bg-white text-black fixed z-20 w-full top-[55px]`}>
       <Link to={"/shop"} onClick={handleSidebar}>
         <img src={shopIcon} alt="" />
         <span>Shop</span>
       </Link>
 
-      <Link to={"/"} onClick={handleSidebar}>
+      <Link to={"/store"} onClick={handleSidebar}>
         <img src={storeIcon} alt="" />
         <span>Our Store</span>
       </Link>
@@ -32,12 +33,12 @@ function MiniNavbar() {
         <span>Favorite</span>
       </Link>
 
-      <Link to={"/"} onClick={handleSidebar}>
+      <Link to={"/login"} onClick={handleSidebar}>
         <img src={loginIcon} alt="" />
         <span>Login</span>
       </Link>
 
-      <Link to={"/"} onClick={handleSidebar}>
+      <Link to={"/about"} onClick={handleSidebar}>
         <img src={shopIcon} alt="" />
         <span>About Us</span>
       </Link>

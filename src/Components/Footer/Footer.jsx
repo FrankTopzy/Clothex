@@ -3,6 +3,8 @@ import './Footer.css'
 import { Link } from 'react-router-dom'
 
 function Footer() {
+  const date = new Date()
+
   return (
     <div className='footer py-[50px] px-[10px] w-full'>
       <div className='footer-container bg-white uppercase text-black'>
@@ -52,7 +54,7 @@ function Footer() {
         </div>
 
         <div className='copyright flex justify-between items-center py-[40px] px-[100px]'>
-          <p className='text-[12px]'>© 2025 CLothex by FRANK All Rights Reserved</p>
+          <p className='text-[12px]'>© {date.getFullYear()} CLothex by FRANK All Rights Reserved</p>
           <Link to={"/"} className='text-2xl font-semibold'>CLOTHEX</Link>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useEffect, useRef, useState } from 'react'
 
 export const ClothContext = createContext();
 
@@ -12,7 +12,10 @@ const ClothContextProvider = (props) => {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem("favorite")) || []);
   const [loading, setLoading] = useState(true);
-  const [sidebar, setSidebar] = useState(false)
+  const [sidebar, setSidebar] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const cartIconRef = useRef(null);
+  const deleteIconRef = useRef(null);
 
   //---------------------------------------------------------------------------------HANDLES CART OPERATIONS -------------------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -98,6 +101,10 @@ const ClothContextProvider = (props) => {
     loading,
     sidebar, 
     setSidebar,
+    imageLoaded,
+    setImageLoaded,
+    cartIconRef,
+    deleteIconRef
   }
 
   return (

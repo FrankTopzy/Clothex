@@ -4,10 +4,12 @@ import { ClothContext } from '../Context/Context';
 import { baseCurrency } from '../../Services/formatCurrency';
 import closeIcon from '../../assets/icons/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
 import deleteIcon from '../../assets/icons/delete_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png'
+import { useNavigate } from 'react-router-dom';
 
 
 function Cart() {
-  const {cartRef, cart,setCart, removeFromCart, currency, cartId, handleCountChange} = useContext(ClothContext)
+  const {cartRef, cart,setCart, removeFromCart, currency, cartId, handleCountChange, cartIconRef, deleteIconRef} = useContext(ClothContext)
+  const navigate = useNavigate();
 
 
   let total = 0;
@@ -16,11 +18,17 @@ function Cart() {
     cartRef.current.scrollTop = cartRef.current.scrollHeight;
   }, [cart]);
 
+  document.addEventListener("click", (e) => {
+  if (!cartRef.current.contains(e.target) && !cartIconRef.current.contains(e.target)) {
+    cartRef.current.style.right = '-200%';
+  }
+  })
+
 
   /*--------------------------------------------------------------------------------- CART CONTAINER -----------------------------------------------------------------------------------------------------*/
   return (
-    <div className="cart bg-white text-black fixed top-0 right-[-200%] max-w-[430px] z-50 h-screen py-8 px-4 shadow-lg overflow-auto text-center" id='cart' ref={cartRef}>
-        <h1 className='text-4xl font-semibold'>Your Cart</h1>
+    <div className="cart active bg-white text-black fixed top-0 right-[-200%] w-full max-w-[430px] z-50 h-screen py-8 px-4 shadow-lg overflow-auto text-center" tabIndex={'0'} id='cart' ref={cartRef}>
+        <h1 className='text-2xl sm:text-3xl font-semibold uppercase'>Your Cart</h1>
 
         {cart.length === 0 && <p className='text-center pt-5'>Your cart is empty</p>}
 
@@ -46,7 +54,7 @@ function Cart() {
                   </div>
                 </div>
 
-                <img src={deleteIcon} alt="" className='bg-black rounded-full p-1 cursor-pointer' onClick={() => removeFromCart(cloth.id)}/>
+                <button ref={deleteIconRef}><img src={deleteIcon} alt="" className='bg-black rounded-full p-1 cursor-pointer' onClick={() => removeFromCart(cloth.id)}/></button>
               </div>
             )
           })
@@ -55,7 +63,7 @@ function Cart() {
         <hr className='bg-gray-400 border-0 h-[1px]'/>
         
         <p className='text-right'>Total: {currency.symbol} {total.toLocaleString()}</p>
-        <button className='bg-black text-white py-2 px-4'>Buy now</button>
+        <button className='bg-black text-white py-2 px-4' onClick={() => {navigate('/clothexPay'); scrollTo(0,0)}}>Buy now</button>
 
         
         <img src={closeIcon} alt="" className='bg-black absolute top-[10px] right-[10px] cursor-pointer' onClick={() => {cartRef.current.style.right = '-200%'}}/>

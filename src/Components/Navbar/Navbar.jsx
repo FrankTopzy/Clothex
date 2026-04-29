@@ -8,7 +8,7 @@ import { ClothContext } from '../Context/Context'
 
 function Navbar() {
  const navRef = useRef();
- const {setCurrency, currency, cartRef, cart, setSidebar} = React.useContext(ClothContext);
+ const {setCurrency, currency, cartRef, cart, setSidebar, cartIconRef} = React.useContext(ClothContext);
 
  /*useEffect(() => {
   window.addEventListener('scroll', () => {
@@ -39,8 +39,8 @@ function Navbar() {
     <div className='navbar flex justify-between items-center text-amber-50' ref={navRef}>
       <div className="nav-left flex items-center gap-5">
         <Link to={"/shop"} onClick={() => scrollTo(0, 0)}>SHOP</Link>
-        <Link>ABOUT</Link>
-        <Link>OUR STORE</Link>
+        <Link to={'/about'}>ABOUT</Link>
+        <Link to={'/store'}>OUR STORE</Link>
       </div>
 
       <div className="logo flex items-center">
@@ -60,11 +60,11 @@ function Navbar() {
           <option value="usd">USD</option>
         </select>
 
-        <Link>LOGIN</Link>
+        <Link to={'/login'}>LOGIN</Link>
         <Link to={"/favorite"} onClick={() => scrollTo(0, 0)}>FAVORITES</Link>
         
-        <div className='relative'>
-          <img src={cartIcon} alt="" width="40px" onClick={() => {cartRef.current.style.right = '0'} } className="cart-icon cursor-pointer"/> 
+        <div className='relative mr-2'>
+          <button ref={cartIconRef}><img src={cartIcon} alt="" width="35px" onClick={() => {cartRef.current.style.right = '0'} } className="cart-icon cursor-pointer"/></button>
           <span className={`absolute top-0 right-[-5px] bg-[red] px-[3px] text-[12px] rounded-full text-center ${cart.length < 1 ? "hidden" : ""}`}>{cart.length }</span>
         </div>
       </div>

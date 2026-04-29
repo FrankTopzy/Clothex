@@ -5,9 +5,11 @@ import { ClothContext } from '../Context/Context.jsx'
 import { baseCurrency } from '../../Services/formatCurrency.js';
 import addToCartBtn from '../../assets/icons/shopping_bag_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png';
 import { Link } from 'react-router-dom';
+import LoaderFile from '../Loader/LoaderFile.jsx';
+
 
 function Card() {
-  const {currency, details, setDetails, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite, setLoading} = React.useContext(ClothContext);
+  const {currency, details, setDetails, cart, setCart, addToCart, removeFromCart, setCount, cartRef, clothes, setClothes, isFavorite, removeFromFavorite, addToFavorite, setLoading, imageLoaded, setImageLoaded} = React.useContext(ClothContext);
   const addBtn = React.useRef(null);
 
 
@@ -51,7 +53,10 @@ function Card() {
     return (
       <div className='card' key={cloth.id}>
         <div className='img relative'>
-          <img src={cloth.image} alt={cloth.name} className='cloth-img'/>
+          <div className='sm:h-100 h-full relative'>
+            {!imageLoaded &&  <div className='flex items-center justify-center absolute w-full h-full'><LoaderFile /></div>}
+            <img src={cloth.image} alt={cloth.name} onLoad={() => setImageLoaded(true)} className='cloth-img'/>
+          </div>
           <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={handleFaveBtn}>♥</button>
         </div>
 
@@ -61,7 +66,7 @@ function Card() {
             <p className='cloth-price'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
           </div>
 
-          <button className='bg-black p-2 rounded-full flex justify-center' onClick={() => {addToCartClick(cloth); cartRef.current.style.right = '0'}} ref={addBtn}>
+          <button className='bg-black p-2 rounded-full flex justify-center' onClick={() => {addToCartClick(cloth); alert('Added!')}} ref={addBtn}>
             <img src={addToCartBtn} alt="" />
           </button>
         </div>
