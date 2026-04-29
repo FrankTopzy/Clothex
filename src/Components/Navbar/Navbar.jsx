@@ -8,7 +8,7 @@ import { ClothContext } from '../Context/Context'
 
 function Navbar() {
  const navRef = useRef();
- const {setCurrency, currency, cartRef, cart, setSidebar} = React.useContext(ClothContext);
+ const {setCurrency, currency, cartRef, cart, setSidebar, cartIconRef} = React.useContext(ClothContext);
 
  /*useEffect(() => {
   window.addEventListener('scroll', () => {
@@ -64,7 +64,7 @@ function Navbar() {
         <Link to={"/favorite"} onClick={() => scrollTo(0, 0)}>FAVORITES</Link>
         
         <div className='relative mr-2'>
-          <img src={cartIcon} alt="" width="35px" onClick={() => {cartRef.current.style.right = '0'} } className="cart-icon cursor-pointer"/> 
+          <button ref={cartIconRef}><img src={cartIcon} alt="" width="35px" onClick={() => {cartRef.current.style.right = '0'} } className="cart-icon cursor-pointer"/></button>
           <span className={`absolute top-0 right-[-5px] bg-[red] px-[3px] text-[12px] rounded-full text-center ${cart.length < 1 ? "hidden" : ""}`}>{cart.length }</span>
         </div>
       </div>
