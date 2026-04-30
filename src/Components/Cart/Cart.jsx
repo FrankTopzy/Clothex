@@ -54,7 +54,7 @@ function Cart() {
                   </div>
                 </div>
 
-                <button ref={deleteIconRef}><img src={deleteIcon} alt="" className='bg-black rounded-full p-1 cursor-pointer' onClick={() => removeFromCart(cloth.id)}/></button>
+                <button ref={deleteIconRef}><img src={deleteIcon} alt="" className='bg-black rounded-full p-1 cursor-pointer' onClick={(e) => {removeFromCart(e, cloth.id); cartRef.current.style.right = '0';}}/></button>
               </div>
             )
           })
