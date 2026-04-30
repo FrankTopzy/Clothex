@@ -64,6 +64,7 @@ function Card() {
           <div className="cloth-details py-2 px-2">
             <p className='cloth-name'>{cloth.name}</p>
             <p className='cloth-price'>{currency.symbol} {((clothPrice)).toLocaleString()}</p>
+            <p className='text-sm text-gray-400 capitalize'>{cart.some(cartItem => cartItem.id === cloth.id) ? 'Already in Cart!' : 'Not in Cart yet!'}</p>
           </div>
 
           <button className='bg-black p-2 rounded-full flex justify-center' onClick={() => {addToCartClick(cloth); alert('Added!')}} ref={addBtn}>
