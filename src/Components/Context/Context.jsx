@@ -40,6 +40,7 @@ const ClothContextProvider = (props) => {
 
   const removeFromCart = (e, clothId) => {
     e.stopPropagation();
+    
     setCart(prev => prev.filter(cloth => cloth.id !== clothId))
   }
 
