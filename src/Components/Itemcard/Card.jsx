@@ -31,7 +31,7 @@ function Card() {
 
   const itemList = clothes.map((cloth) => {
 
-    const favorite = isFavorite(cloth.id)
+    const favorite = isFavorite(cloth.id);
 
     function handleFaveBtn() {
       if (favorite) removeFromFavorite(cloth.id)
