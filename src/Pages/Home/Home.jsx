@@ -1,6 +1,6 @@
 import React, { use, useContext, useEffect, useState } from 'react'
 import './Home.css'
-import homeBanner from '/assets/bg-img/bg-1.jpg'
+import homeBanner from '../../assets/bg-img/bg-1.jpg'
 import { Link } from 'react-router-dom'
 import Card from '../../Components/Itemcard/Card'
 import searchIcon from '../../assets/icons/search_24dp_00000_FILL0_wght400_GRAD0_opsz24.png'
@@ -40,8 +40,6 @@ function Home() {
       {loading && <div className='fixed w-full h-screen bg-white left-0 z-50 flex items-center justify-center'><img src={spinner} alt="" className='w-[70px]'/></div>}
       {/*------------------------------------------------------------------------------------------------------ MAIN SECTION ------------------------------------------------------------------------------------------------*/}
       <div className="hero">
-        <img src={homeBanner} alt="" className='w-full min-h-screen'/>
-
         <div className="search-container w-[30%]">
           <div className='bg-white flex items-center gap-1 rounded-3xl mb-1'>
             <input type="search" className='search-input flex-1 py-3 pl-5 border-0 outline-none text-black' placeholder='Search Product.........' onChange={(e) => setSearch(e.target.value)} value={search}/>
