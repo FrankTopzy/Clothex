@@ -32,7 +32,7 @@ const ClothContextProvider = (props) => {
     const matchingItem = cart.find((cartItem) => cartItem.id === cloth.id)
 
     if (matchingItem) {
-      setCart(cart.map((cartItem) => cartItem.id === cloth.id ? { ...cartItem, count: cartItem.count + 1 } : cartItem)); //if condition met, increment else return original cartitem
+      setCart(cart.map((cartItem) => cartItem.id === cloth.id ? { ...cartItem, count: cartItem.count + 1 } : cartItem)); //if condition is met, increment else return original cartitem
     } else {
       setCart(prev => [...prev, {...cloth, count: 1}])
     }
